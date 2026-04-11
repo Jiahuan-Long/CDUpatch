@@ -1,8 +1,14 @@
-# CDUpatch
+# CDUPatch
+
+## CDUPatch: Color-Driven Universal Adversarial Patch Attack for Dual-Modal Visible-Infrared Detectors
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-CDUpatch is a research-oriented codebase for training and evaluating adversarial patches against YOLO-based object detectors. The project is built on top of the Ultralytics YOLOv3/YOLOv5 code structure and adds a custom adversarial patch pipeline for visible-light and mixed visible/infrared scenes.
+This repository contains the code for the ACM Multimedia (ACM MM) paper:
+
+**CDUPatch: Color-Driven Universal Adversarial Patch Attack for Dual-Modal Visible-Infrared Detectors**
+
+CDUPatch is a research-oriented codebase for training and evaluating adversarial patches against YOLO-based object detectors. The project is built on top of the Ultralytics YOLOv3/YOLOv5 code structure and adds a custom adversarial patch pipeline for visible-light and mixed visible/infrared scenes.
 
 ## What This Repository Does
 
@@ -57,6 +63,12 @@ This project currently uses hard-coded local paths in several scripts. Update th
 - dataset yaml files under `data/` if needed
 
 The repository intentionally does not track large YOLO detector checkpoints such as `yolov3.pt`, `yolov5x.pt`, and similar `.pt` files. The visible-to-infrared mapping module under `vis2infra/` is kept in the repository, including its lightweight mapping assets.
+
+## Release Status
+
+- The current repository contains the main codebase for the paper.
+- Related datasets and pretrained weights are being prepared and will be uploaded in a future update.
+- Large YOLO detector checkpoints are still expected to be managed locally for now.
 
 ## Training
 

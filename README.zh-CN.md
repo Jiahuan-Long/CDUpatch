@@ -1,8 +1,14 @@
-# CDUpatch
+# CDUPatch
+
+## CDUPatch: Color-Driven Universal Adversarial Patch Attack for Dual-Modal Visible-Infrared Detectors
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-CDUpatch 是一个面向研究的代码仓库，用于在 YOLO 系列目标检测器上训练和评估对抗补丁。项目基于 Ultralytics YOLOv3/YOLOv5 的代码结构，并在此基础上增加了适用于可见光与可见光/红外混合场景的补丁攻击流程。
+本仓库是 ACM Multimedia（ACM MM）论文对应的代码实现：
+
+**CDUPatch: Color-Driven Universal Adversarial Patch Attack for Dual-Modal Visible-Infrared Detectors**
+
+CDUPatch 是一个面向研究的代码仓库，用于在 YOLO 系列目标检测器上训练和评估对抗补丁。项目基于 Ultralytics YOLOv3/YOLOv5 的代码结构，并在此基础上增加了适用于可见光与可见光/红外混合场景的补丁攻击流程。
 
 ## 项目功能
 
@@ -57,6 +63,12 @@ pip install -r requirements.txt
 - 如有需要，`data/` 下的数据集配置文件也需要同步调整
 
 仓库不会跟踪较大的 YOLO 检测模型权重，例如 `yolov3.pt`、`yolov5x.pt` 等 `.pt` 文件。`vis2infra/` 目录及其中的映射模型文件会保留在仓库中。
+
+## 发布状态
+
+- 当前仓库已包含论文对应的主要代码。
+- 相关数据集与预训练权重正在整理中，后续会补充上传。
+- 较大的 YOLO 检测器权重目前仍默认由使用者在本地自行准备。
 
 ## 训练补丁
 
