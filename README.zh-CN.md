@@ -107,6 +107,19 @@ python test_patch.py
 - 当前实现默认依赖 CUDA，如需 CPU 环境运行，通常需要做少量修改。
 - 数据集、大型 YOLO 模型权重、生成结果和临时实验文件不会纳入版本控制。
 
+## 引用
+
+如果你使用本项目，请引用：
+
+```bibtex
+@inproceedings{long2025cdupatch,
+  title={Cdupatch: Color-driven universal adversarial patch attack for dual-modal visible-infrared detectors},
+  author={Long, Jiahuan and Yao, Wen and Jiang, Tingsong and Hou, Jiacheng and Jia, Shuai and Wu, Junqi and Zhang, Xiaoya and Zheng, Xiaohu and Ma, Chao},
+  booktitle={Proceedings of the 33rd ACM International Conference on Multimedia (ACM MM)},
+  year={2025}
+}
+```
+
 ## 致谢
 
 - 项目建立在 Ultralytics YOLOv3/YOLOv5 的代码结构之上

@@ -107,6 +107,19 @@ The evaluation script can:
 - The current implementation is CUDA-centric and may require small edits for CPU-only environments.
 - Datasets, large YOLO model weights, generated outputs, and temporary experiment artifacts are excluded from version control.
 
+## Citation
+
+If you use this project, please cite:
+
+```bibtex
+@inproceedings{long2025cdupatch,
+  title={Cdupatch: Color-driven universal adversarial patch attack for dual-modal visible-infrared detectors},
+  author={Long, Jiahuan and Yao, Wen and Jiang, Tingsong and Hou, Jiacheng and Jia, Shuai and Wu, Junqi and Zhang, Xiaoya and Zheng, Xiaohu and Ma, Chao},
+  booktitle={Proceedings of the 33rd ACM International Conference on Multimedia (ACM MM)},
+  year={2025}
+}
+```
+
 ## Acknowledgements
 
 - Built on top of the Ultralytics YOLOv3/YOLOv5 project structure
