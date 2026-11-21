@@ -306,7 +306,6 @@ import torchvision
 
 
 import struct  # get_image_size
-import imghdr  # get_image_size
 ANCHOR_PATH = "data/yolov3_anchors.txt"
 
 
@@ -680,6 +679,18 @@ def file_lines(thefilepath):
     return count
 
 
+def _image_kind(head):
+    """The jpeg, png and gif header checks of imghdr.what(), in the same order.
+    imghdr was removed in Python 3.13 (PEP 594)."""
+    if head[6:10] in (b'JFIF', b'Exif') or head[:4] == b'\xff\xd8\xff\xdb':
+        return 'jpeg'
+    if head.startswith(b'\211PNG\r\n\032\n'):
+        return 'png'
+    if head[:6] in (b'GIF87a', b'GIF89a'):
+        return 'gif'
+    return None
+
+
 def get_image_size(fname):
     '''Determine the image type of fhandle and return its size.
     from draco'''
@@ -687,14 +698,15 @@ def get_image_size(fname):
         head = fhandle.read(24)
         if len(head) != 24:
             return
-        if imghdr.what(fname) == 'png':
+        kind = _image_kind(head)
+        if kind == 'png':
             check = struct.unpack('>i', head[4:8])[0]
             if check != 0x0d0a1a0a:
                 return
             width, height = struct.unpack('>ii', head[16:24])
-        elif imghdr.what(fname) == 'gif':
+        elif kind == 'gif':
             width, height = struct.unpack('<HH', head[6:10])
-        elif imghdr.what(fname) == 'jpeg' or imghdr.what(fname) == 'jpg':
+        elif kind == 'jpeg':
             try:
                 fhandle.seek(0)  # Read 0xff next
                 size = 2
